@@ -36,4 +36,7 @@ if(monto >= 1) {
 	}
 	
 	
+public class DolarEstadounidense {
+	//TODO: Rodrigo Monteagudo
+	// 		EN EL CONTRUCTOR: this.cotizacionSobreDolar = 1.0;
 }
