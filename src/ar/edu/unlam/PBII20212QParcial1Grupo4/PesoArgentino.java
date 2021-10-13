@@ -8,7 +8,7 @@ public class PesoArgentino extends Cuenta{
 	
 	public PesoArgentino(Double saldo) {
 		super(saldo);
-		// TODO Auto-generated constructor stub
+		this.cotizacionSobreDolar = 0.01;
 	}
 	
 	@Override
