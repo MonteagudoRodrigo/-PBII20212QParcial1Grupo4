@@ -2,7 +2,8 @@ package ar.edu.unlam.PBII20212QParcial1Grupo4;
 
 abstract public class Cuenta {
 	public Double saldo;
-	public Double cotizacionSobreDolar; // De la moneda de la cuenta
+	public Double cotizacion;
+	
 
 	public Cuenta() {
 		this.saldo = 0.0;
