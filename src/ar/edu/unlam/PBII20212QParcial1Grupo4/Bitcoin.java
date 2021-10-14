@@ -12,7 +12,9 @@ public class Bitcoin extends Cuenta implements Venta, Compra {
 
 	@Override
 	public Boolean extraer(Double monto) {
-		return super.extraer(monto - 2 * FEE_BLOCKCHAIN);
+		Double montoExtraccion = monto + (FEE_BLOCKCHAIN*2);
+		
+		return super.extraer(montoExtraccion);
 	}
 
 	public Boolean comprar(PesoArgentino cuentaDebito, Double montoAComprar) {
@@ -29,10 +31,12 @@ public class Bitcoin extends Cuenta implements Venta, Compra {
 
 	public Boolean vender(PesoArgentino cuentaCredito, Double montoAVender) {
 		if (montoAVender > 0 && montoAVender <= saldo) {
-			this.extraer(montoAVender);
+			super.extraer(montoAVender);
 			cuentaCredito.depositar(montoAVender * cuentaCredito.getCotizacionBitcoin());
+			
 			return true;
 		}
+		
 		return false;
 	}
 
