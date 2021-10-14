@@ -142,4 +142,34 @@ public class TestCuentaDolarEstadounidense {
 
 		assertEquals(false, compraValida);
 	}
+	
+	@Test
+	public void alVenderEnUnaCuentaDeDolaresEstadounidensesDebesTenerUnSaldoMayorOIgualAlMontoDeVenta() {
+		Double montoInicial = 10.0;
+		PesoArgentino cuentaPesos = new PesoArgentino(montoInicial);
+		
+		Double saldoInicial = 1000.0;
+		Double montoVenta = 500.0;
+		
+		DolarEstadounidense cuenta = new DolarEstadounidense(saldoInicial);
+		
+		Boolean ventaValida = cuenta.vender(cuentaPesos, montoVenta);
+
+		assertEquals(true, ventaValida);
+	}
+	
+	@Test
+	public void alVenderEnUnaCuentaDeDolaresEstadounidensesNoLoPermiteSiTenesUnSaldoMenorAlMontoDeVenta() {
+		Double montoInicial = 10.0;
+		PesoArgentino cuentaPesos = new PesoArgentino(montoInicial);
+		
+		Double saldoInicial = 10.0;
+		Double montoVenta = 500.0;
+		
+		DolarEstadounidense cuenta = new DolarEstadounidense(saldoInicial);
+		
+		Boolean ventaValida = cuenta.vender(cuentaPesos, montoVenta);
+
+		assertEquals(false, ventaValida);
+	}
 }
