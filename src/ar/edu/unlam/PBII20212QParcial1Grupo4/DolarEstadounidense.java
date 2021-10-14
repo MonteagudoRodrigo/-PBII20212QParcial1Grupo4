@@ -72,5 +72,11 @@ public class DolarEstadounidense extends Cuenta implements Compra, Venta {
 
 		return false;
 	}
+	
+	@Override
+	public TipoCuenta getTipo(){
+		return TipoCuenta.DOLAR;
+	}
+
 
 }

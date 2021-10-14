@@ -32,4 +32,8 @@ abstract public class Cuenta {
 	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
+	
+	public TipoCuenta getTipo(){
+		return null;
+	}
 }
