@@ -28,8 +28,12 @@ public class DolarEstadounidense extends Cuenta implements Compra, Venta {
 	}
 
 	public Boolean vender(Cuenta cuentaCredito, Double montoAVender) {
-		// TODO Auto-generated method stub
-		return null;
+		if(cuentaCredito.getSaldo()>= montoAVender) {
+			super.extraer(montoAVender);
+			cuentaCredito.depositar(montoAVender);
+			return true;
+		}
+		return false;
 	}
 
 	public Boolean comprar(Cuenta cuentaDebito, Double montoAComprar) {
