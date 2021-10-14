@@ -13,10 +13,11 @@ public class PesoArgentino extends Cuenta{
 	
 	@Override
 	public void depositar(Double monto) {
-		Double resultadoMonto=monto;
-		if(monto>=MINIMO_DEPOSITO_PARA_INTERES) {
-			resultadoMonto*=INTERES;
+		Double resultadoMonto = monto;
+		if(monto > PesoArgentino.MINIMO_DEPOSITO_PARA_INTERES) {
+			resultadoMonto *= PesoArgentino.INTERES;
 		}
+		
 		super.depositar(resultadoMonto);
 	}
 
