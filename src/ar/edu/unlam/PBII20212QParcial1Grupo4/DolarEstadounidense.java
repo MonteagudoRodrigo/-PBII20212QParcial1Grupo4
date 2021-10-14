@@ -62,7 +62,7 @@ public class DolarEstadounidense extends Cuenta implements Compra, Venta {
 			}
 			if(compraValida) {
 			cuentaDebito.extraer(montoAComprar * cuentaDebito.getCotizacionDolar());
-			super.depositar(montoAComprar);
+			this.depositar(montoAComprar);
 			return true;
 			}
 		}

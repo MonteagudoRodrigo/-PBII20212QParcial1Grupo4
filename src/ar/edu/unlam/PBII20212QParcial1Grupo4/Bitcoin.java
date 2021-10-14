@@ -4,22 +4,21 @@ public class Bitcoin extends Cuenta implements Venta, Compra {
 
 	private static final Double FEE_BLOCKCHAIN = 0.015;
 
-	public Bitcoin(Double saldo, Double cotizacion) {
+	public Bitcoin(Double saldo) {
 		super(saldo);
-		
+
 	}
 
 	@Override
 	public Boolean extraer(Double monto) {
-		return super.extraer(monto - 2*FEE_BLOCKCHAIN);
+		return super.extraer(monto - 2 * FEE_BLOCKCHAIN);
 	}
 
 	public Boolean comprar(PesoArgentino cuentaDebito, Double montoAComprar) {
-		if(montoAComprar > FEE_BLOCKCHAIN) {
-			Double montoADebitar = montoAComprar * cuentaDebito.getCotizacionBitcoin();
-			
-			if (cuentaDebito.getSaldo() * cuentaDebito.getCotizacionBitcoin() >= montoADebitar) {
-				cuentaDebito.extraer(montoADebitar);
+		if (montoAComprar > FEE_BLOCKCHAIN) {
+
+			if (cuentaDebito.getSaldo() >= montoAComprar * cuentaDebito.getCotizacionBitcoin()) {
+				cuentaDebito.extraer(montoAComprar * cuentaDebito.getCotizacionBitcoin());
 				this.depositar(montoAComprar);
 				return true;
 			}
@@ -29,13 +28,11 @@ public class Bitcoin extends Cuenta implements Venta, Compra {
 
 	public Boolean vender(PesoArgentino cuentaCredito, Double montoAVender) {
 		if (montoAVender > 0 && montoAVender <= saldo) {
-			Double montoACredito = montoAVender * cuentaCredito.getCotizacionBitcoin();
-			this.extraer(montoACredito);
-			cuentaCredito.depositar(montoACredito / cuentaCredito.getCotizacionBitcoin());
+			this.extraer(montoAVender);
+			cuentaCredito.depositar(montoAVender * cuentaCredito.getCotizacionBitcoin());
 			return true;
 		}
 		return false;
 	}
-
 
 }
