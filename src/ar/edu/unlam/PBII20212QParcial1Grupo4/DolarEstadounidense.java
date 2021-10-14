@@ -14,6 +14,7 @@ public class DolarEstadounidense extends Cuenta implements Compra, Venta {
 		super();
 		
 		this.depositar(monto);
+		this.mesUltimaCompra = 0;
 		this.saldoParcial = 0.00;
 	}
 
@@ -41,7 +42,7 @@ public class DolarEstadounidense extends Cuenta implements Compra, Venta {
 	public Boolean comprar(PesoArgentino cuentaDebito, Double montoAComprar) {
 		Boolean compraValida = false;
 		
-		if (montoAComprar > LIMITE_COMPRA || montoAComprar <= 0) {	
+		if (montoAComprar > LIMITE_COMPRA || montoAComprar <= 0) {
 			return false;
 		}
 
@@ -56,7 +57,7 @@ public class DolarEstadounidense extends Cuenta implements Compra, Venta {
 				
 				compraValida = true;
 				
-			} else if (this.mesUltimaCompra > 0 && this.mesUltimaCompra == month && (saldoParcial+montoAComprar)< 1000) {
+			} else if (this.mesUltimaCompra > 0 && this.mesUltimaCompra == month && (saldoParcial+montoAComprar) <= LIMITE_COMPRA) {
 				saldoParcial += montoAComprar;
 				
 				compraValida = true;

@@ -63,7 +63,7 @@ public class TestCuentaPesosArgentinos {
 	}
 	
 	@Test
-	public void alExtraerEnUnaCuentaDePesosArgentinosUnSaldoMayorAlSaldoActualNoGeneraLaExtraccion() {
+	public void alExtraerEnUnaCuentaDePesosArgentinosUnMontoMayorAlSaldoActualNoGeneraLaExtraccion() {
 		Double saldoInicial = 1000.0;
 		Double saldoExtraccion = 20000.0;
 		
