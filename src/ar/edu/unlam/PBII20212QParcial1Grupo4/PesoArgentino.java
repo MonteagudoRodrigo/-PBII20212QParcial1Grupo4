@@ -32,4 +32,9 @@ public class PesoArgentino extends Cuenta{
 		
 		super.depositar(resultadoMonto);
 	}	
+	
+	@Override
+	public TipoCuenta getTipo(){
+		return TipoCuenta.PESO;
+	}
 }
