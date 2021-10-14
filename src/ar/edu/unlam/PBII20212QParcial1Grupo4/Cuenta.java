@@ -4,10 +4,10 @@ abstract public class Cuenta {
 	public Double saldo;
 	public Double cotizacionSobreDolar; // De la moneda de la cuenta
 
-	public Cuenta(Double saldo) {
-		this.saldo = saldo;
+	public Cuenta() {
+		this.saldo = 0.0;
 	}
-
+	
 	public void depositar(Double monto) {
 		if(monto > 0) {
 			this.saldo += monto;

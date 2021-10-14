@@ -4,8 +4,10 @@ public class Bitcoin extends Cuenta implements Venta, Compra {
 
 	private static final Double FEE_BLOCKCHAIN_EN_DOLARES = 4.27;
 
-	public Bitcoin(Double saldo, Double cotizacion) {
-		super(saldo);
+	public Bitcoin(Double monto, Double cotizacion) {
+		super();
+		
+		this.depositar(monto);
 		this.cotizacionSobreDolar = 50.000;
 	}
 

@@ -7,57 +7,57 @@ import org.junit.Test;
 public class TestCuentaPesosArgentinos {
 
 	@Test
-	public void alCrearUnaCuentaEnPesosArgentinosGuardaElSaldoInicial() {
-		Double saldoEsperado = 1000.0;
-		Double saldoInicial = 1000.0;
+	public void alCrearUnaCuentaEnPesosArgentinosDepositaElMontoInicial() {
+		Double montoEsperado = 1000.0;
+		Double montoInicial = 1000.0;
 		
-		Cuenta cuenta = new PesoArgentino(saldoInicial);
+		Cuenta cuenta = new PesoArgentino(montoInicial);
 		
-		assertEquals(saldoEsperado, cuenta.getSaldo());
+		assertEquals(montoEsperado, cuenta.getSaldo());
 	}
 
 	@Test
 	public void alDepositarMasDeDiezMilEnUnaCuentaDePesosArgentinosAplicaElInteresDefinido() {
-		Double saldoInicial = 1000.0;
-		Double saldoDeposito = 11000.0;
-		Double saldoEsperado = saldoInicial + (saldoDeposito*1.03);
+		Double montoInicial = 1000.0;
+		Double montoDeposito = 11000.0;
+		Double montoEsperado = montoInicial + (montoDeposito*1.03);
 		
-		Cuenta cuenta = new PesoArgentino(saldoInicial);
-		cuenta.depositar(saldoDeposito);
+		Cuenta cuenta = new PesoArgentino(montoInicial);
+		cuenta.depositar(montoDeposito);
 		
-		assertEquals(saldoEsperado, cuenta.getSaldo());
+		assertEquals(montoEsperado, cuenta.getSaldo());
 	}
 	
 	@Test
 	public void alDepositarMenosDeDiezMilEnUnaCuentaDePesosArgentinosNoAplicaElInteresDefinido() {
-		Double saldoInicial = 1000.0;
-		Double saldoDeposito = 9000.0;
-		Double saldoEsperado = saldoInicial + saldoDeposito;
+		Double montoInicial = 1000.0;
+		Double montoDeposito = 9000.0;
+		Double montoEsperado = montoInicial + montoDeposito;
 		
-		Cuenta cuenta = new PesoArgentino(saldoInicial);
-		cuenta.depositar(saldoDeposito);
+		Cuenta cuenta = new PesoArgentino(montoInicial);
+		cuenta.depositar(montoDeposito);
 		
-		assertEquals(saldoEsperado, cuenta.getSaldo());
+		assertEquals(montoEsperado, cuenta.getSaldo());
 	}
 	
 	@Test
-	public void alExtraerEnUnaCuentaDePesosArgentinosUnSaldoEnCeroNoGeneraLaExtraccion() {
-		Double saldoInicial = 1000.0;
-		Double saldoExtraccion = 0.0;
+	public void alExtraerEnUnaCuentaDePesosArgentinosUnMontoEnCeroNoGeneraLaExtraccion() {
+		Double montoInicial = 1000.0;
+		Double montoExtraccion = 0.0;
 		
-		Cuenta cuenta = new PesoArgentino(saldoInicial);
-		Boolean pudoExtraer = cuenta.extraer(saldoExtraccion);
+		Cuenta cuenta = new PesoArgentino(montoInicial);
+		Boolean pudoExtraer = cuenta.extraer(montoExtraccion);
 		
 		assertEquals(false, pudoExtraer);
 	}
 	
 	@Test
-	public void alExtraerEnUnaCuentaDePesosArgentinosUnSaldoMayorACeroGeneraLaExtraccion() {
-		Double saldoInicial = 1000.0;
-		Double saldoExtraccion = 100.0;
+	public void alExtraerEnUnaCuentaDePesosArgentinosUnMontoMayorACeroGeneraLaExtraccion() {
+		Double montoInicial = 1000.0;
+		Double montoExtraccion = 100.0;
 		
-		Cuenta cuenta = new PesoArgentino(saldoInicial);
-		Boolean pudoExtraer = cuenta.extraer(saldoExtraccion);
+		Cuenta cuenta = new PesoArgentino(montoInicial);
+		Boolean pudoExtraer = cuenta.extraer(montoExtraccion);
 		
 		assertEquals(true, pudoExtraer);
 	}
