@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class BitcoinTest {
+public class TestCuentaDolarEstadounidense {
 
 	@Test
 	public void test() {
