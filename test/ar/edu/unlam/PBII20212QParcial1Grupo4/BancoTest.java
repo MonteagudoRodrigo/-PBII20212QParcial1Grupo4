@@ -9,8 +9,8 @@ public class BancoTest {
 	@Test
 	public void queSeAgreguenCorrectamenteBilleteras() {
 		Banco bcra = new Banco();
-		Billetera wallet1 = new Billetera("Juan", "Perez", 12345678);
-		Billetera wallet2 = new Billetera("Juan", "Perez", 12345679);
+		Billetera wallet1 = new Billetera("Juan", "Perez", 20333132);
+		Billetera wallet2 = new Billetera("Juan", "Perez", 50100200);
 		
 		bcra.agregarBilletera(wallet1);
 		bcra.agregarBilletera(wallet2);
@@ -24,8 +24,8 @@ public class BancoTest {
 	@Test
 	public void queNoSeAgregueMasDe1BilleteraConElMismoTitular() {
 		Banco bcra = new Banco();
-		Billetera wallet1 = new Billetera("Juan", "Perez", 12345678);
-		Billetera wallet2 = new Billetera("Juan", "Perez", 12345678);
+		Billetera wallet1 = new Billetera("Juan", "Perez", 30222555);
+		Billetera wallet2 = new Billetera("Juan", "Perez", 30222555);
 		
 		bcra.agregarBilletera(wallet1);
 		Boolean resultadoObtenido = bcra.agregarBilletera(wallet2);
