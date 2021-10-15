@@ -1,4 +1,4 @@
-# Billetera Unificada - Banco Central de la RepÃºblica Argentina
+# Billetera Unificada - Banco Central de la República Argentina
 
 #### Integrantes
 * Rodrigo Monteagudo
@@ -44,5 +44,5 @@ Para lograr una mejor adopción, propone lo siguiente:
 
 #### Diagrama
 <div style="display: flex;justify-content: center;">
-<img src="assets/diagrama.png" alt="Diagramación del proyecto" style="width: 380px; height: 600px;" />
+<img src="assets/diagrama.png" alt="Diagramación del proyecto" style="display: flex;align-self: center;width: 380px; height: 600px;" />
 </div>
