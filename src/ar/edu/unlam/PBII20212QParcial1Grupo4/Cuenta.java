@@ -26,5 +26,7 @@ abstract public class Cuenta {
 		return saldo;
 	}
 
-	abstract public TipoCuenta getTipo();
+	public TipoCuenta getTipo() {
+		return null;
+	};
 }

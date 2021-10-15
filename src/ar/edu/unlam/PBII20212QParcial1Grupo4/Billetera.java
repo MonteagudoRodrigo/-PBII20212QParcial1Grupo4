@@ -5,13 +5,11 @@ public class Billetera {
 	private String apellido;
 	private Integer dni;
 	private Cuenta cuentas[];
-	private final static Integer MAXIMOS_DE_CUENTAS = 3;
 
 	public Billetera(String nombre, String apellido, Integer dni) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.dni = dni;
-		this.cuentas = new Cuenta[MAXIMOS_DE_CUENTAS];
 	}
 
 	public String getNombre() {
@@ -38,33 +36,34 @@ public class Billetera {
 		return cuentas;
 	}
 
-	public Boolean crearCuenta(TipoCuenta tipoDeCuenta, Double montoInicial) {
-		for (Integer i = 0; i < cuentas.length; i++) {
-			if (cuentas[i].getTipo() == tipoDeCuenta) {
-				return false;
+	public Boolean agregarCuenta(Cuenta cuentaAAgregar) {
+		return agregarCuentaAArrayDeCuentas(cuentaAAgregar);
+	}
+	
+	// Agrega un cuenta al final del array de cuentas
+	private Boolean agregarCuentaAArrayDeCuentas(Cuenta nuevaCuenta) {
+		if(cuentas == null) {
+			this.cuentas = new Cuenta[] {nuevaCuenta};
+		} else {
+			Cuenta[] nuevoArrayDeCuentas = new Cuenta[cuentas.length + 1];
+			
+			for (int i = 0; i < cuentas.length; i++) {
+				nuevoArrayDeCuentas[i] = cuentas[i];
 			}
+			if(yaEsisteTipoDeCuentaEnBilletera(nuevaCuenta)) return false;
+			nuevoArrayDeCuentas[cuentas.length] = nuevaCuenta;
+			
+			this.cuentas = nuevoArrayDeCuentas;
 		}
-		
-		Cuenta nuevaCuenta = null;
-		switch (tipoDeCuenta) {
-			case DOLAR:
-				nuevaCuenta = new DolarEstadounidense(montoInicial);
-				break;
-			case PESO:
-				nuevaCuenta = new PesoArgentino(montoInicial);
-				break;
-			case BITCOIN:
-				nuevaCuenta = new Bitcoin(montoInicial);
-				break;
-		}
-		
+		return true;
+	}
+
+	private Boolean yaEsisteTipoDeCuentaEnBilletera(Cuenta nuevaCuenta) {
 		for (Integer i = 0; i < cuentas.length; i++) {
-			if (cuentas[i] == null && nuevaCuenta != null) {
-				cuentas[i] = nuevaCuenta;
+			if (cuentas[i].getTipo() == nuevaCuenta.getTipo()) {
 				return true;
 			}
 		}
-		
 		return false;
 	}
 }
