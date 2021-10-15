@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 
-public class DolarEstadounidense extends Cuenta implements Compra, Venta {
+public class DolarEstadounidense extends Cuenta implements Comprable, Vendible {
 	private final static Double INTERES = 1.05;
 	private final static Double LIMITE_COMPRA = 1000.0;
 	private Integer mesUltimaCompra;

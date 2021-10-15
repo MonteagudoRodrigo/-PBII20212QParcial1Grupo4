@@ -1,6 +1,6 @@
 package ar.edu.unlam.PBII20212QParcial1Grupo4;
 
-public class Bitcoin extends Cuenta implements Venta, Compra {
+public class Bitcoin extends Cuenta implements Comprable, Vendible {
 
 	private static final Double FEE_BLOCKCHAIN = 0.015;
 
@@ -19,13 +19,13 @@ public class Bitcoin extends Cuenta implements Venta, Compra {
 
 	public Boolean comprar(PesoArgentino cuentaDebito, Double montoAComprar) {
 		if (montoAComprar > FEE_BLOCKCHAIN) {
-
 			if (cuentaDebito.getSaldo() >= montoAComprar * cuentaDebito.getCotizacionBitcoin()) {
 				cuentaDebito.extraer(montoAComprar * cuentaDebito.getCotizacionBitcoin());
 				this.depositar(montoAComprar);
 				return true;
 			}
 		}
+		
 		return false;
 	}
 
@@ -33,12 +33,12 @@ public class Bitcoin extends Cuenta implements Venta, Compra {
 		if (montoAVender > 0 && montoAVender <= saldo) {
 			super.extraer(montoAVender);
 			cuentaCredito.depositar(montoAVender * cuentaCredito.getCotizacionBitcoin());
-			
 			return true;
 		}
 		
 		return false;
 	}
+	
 	@Override
 	public TipoCuenta getTipo(){
 		return TipoCuenta.BITCOIN;
