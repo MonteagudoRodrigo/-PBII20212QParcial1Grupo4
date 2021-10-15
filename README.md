@@ -23,14 +23,22 @@ Para lograr una mejor adopci√≥n, propone lo siguiente:
 		<li>Por cada dep√≥sito en USD, ofrece un inter√©s del 5%.</li>
 		<li>Las extracciones no tienen costo alguno.</li>
 		<li>Para la compra, el cepo al d√≥lar por decreto (U$D 200 mensuales) se extiende a la compra mensual de U$D 1.000.</li>
-		<li>Para la venta, el banco compra los d√≥lares al precio de venta oficial + los impuestos (35% + 35%)</li>
+		<ul>
+			<li><b>La compra de dÛlares sÛlo puede hacerse con Pesos Argentinos.</b></li>
+		</ul>
+		<li>Para la venta, no hay restricciones</li>
+		<ul>
+			<li><b>Se depositar· en tu cuenta de Pesos Argentinos el valor seg˙n la cotizaciÛn.</b></li>
+		</ul>
 	</ul>
+<b>(El Banco tomar· como referencia el valor de $185 para la compra/venta de dÛlares.)</b>
 	<li><b>Bitcoin</b></li>
 	<ul>
-		<li>Actualmente la blockchain de Bitcoin tiene un fee de U$D4,27 por transacci√≥n. El banco cubrir√° dicho fee, incentivando a centralizar los dep√≥sitos y las compras dentro de la misma.</li>
-		<ul><li>El monto m√≠nimo de compra debe ser mayor al fee de la blockchain U$D4,27.</li></ul>
-		<li>Para las extracciones, multiplicar√° el fee base de la blockchain (U$D4,27 x 2) con el fin de retener los capitales y que los mismos no se fuguen hacia otras Wallets competidoras.</li>
+		<li>Actualmente la blockchain de Bitcoin tiene un fee de BTC 0,015 por transacci√≥n. El banco cubrir√° dicho fee, incentivando a centralizar los dep√≥sitos y las compras dentro de la misma.</li>
+		<ul><li>El monto m√≠nimo de compra debe ser mayor al fee de la blockchain (BTC 0,015).</li></ul>
+		<li>Para las extracciones, multiplicar√° el fee base de la blockchain (BTC 0.015 x 2) con el fin de retener los capitales y que los mismos no se fuguen hacia otras Wallets competidoras.</li>
 		<li>Para la venta, no se aplican restricciones.</li>
+		<ul><li><b>Se depositar· en tu cuenta de Pesos Argentinos el valor seg˙n la cotizaciÛn.</b></li></ul>
 	</ul>
 </ul>
 
