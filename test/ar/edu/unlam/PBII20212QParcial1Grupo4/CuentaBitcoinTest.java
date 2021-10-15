@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class TestCuentaBitcoin {
+public class CuentaBitcoinTest {
 	@Test
 	public void alCrearUnaCuentaEnBitcoinDepositaElMontoInicial() {
 		Double montoEsperado = 1.0;

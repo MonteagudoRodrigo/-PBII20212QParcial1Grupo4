@@ -34,10 +34,6 @@ public class Billetera {
 		return dni;
 	}
 
-	public void setDni(Integer dni) {
-		this.dni = dni;
-	}
-
 	public Cuenta[] getCuentas() {
 		return cuentas;
 	}
@@ -48,37 +44,27 @@ public class Billetera {
 				return false;
 			}
 		}
+		
+		Cuenta nuevaCuenta = null;
 		switch (tipoDeCuenta) {
-		case DOLAR:
-			for (Integer i = 0; i < cuentas.length; i++) {
-				if (cuentas[i] == null) {
-					DolarEstadounidense nuevaCuenta = new DolarEstadounidense(montoInicial);
-					cuentas[i] = nuevaCuenta;
-					return true;
-				}
-			}
-			break;
-		case PESO:
-			for (Integer i = 0; i < cuentas.length; i++) {
-				if (cuentas[i] == null) {
-					PesoArgentino nuevaCuenta = new PesoArgentino(montoInicial);
-					cuentas[i] = nuevaCuenta;
-					return true;
-				}
-			}
-			break;
-		case BITCOIN:
-			for (Integer i = 0; i < cuentas.length; i++) {
-				if (cuentas[i] == null) {
-					Bitcoin nuevaCuenta = new Bitcoin(montoInicial);
-					cuentas[i] = nuevaCuenta;
-					return true;
-				}
-			}
-			break;
-
+			case DOLAR:
+				nuevaCuenta = new DolarEstadounidense(montoInicial);
+				break;
+			case PESO:
+				nuevaCuenta = new PesoArgentino(montoInicial);
+				break;
+			case BITCOIN:
+				nuevaCuenta = new Bitcoin(montoInicial);
+				break;
 		}
-
+		
+		for (Integer i = 0; i < cuentas.length; i++) {
+			if (cuentas[i] == null && nuevaCuenta != null) {
+				cuentas[i] = nuevaCuenta;
+				return true;
+			}
+		}
+		
 		return false;
 	}
 }

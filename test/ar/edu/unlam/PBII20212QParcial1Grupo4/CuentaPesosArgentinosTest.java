@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class TestCuentaPesosArgentinos {
+public class CuentaPesosArgentinosTest {
 
 	@Test
 	public void alCrearUnaCuentaEnPesosArgentinosDepositaElMontoInicial() {
