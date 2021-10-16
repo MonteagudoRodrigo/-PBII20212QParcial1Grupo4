@@ -34,7 +34,7 @@ public class PesoArgentino extends Cuenta{
 	}	
 	
 	@Override
-	public TipoCuenta getTipo(){
-		return TipoCuenta.PESO;
+	public TipoDeCuenta getTipoDeCuenta(){
+		return TipoDeCuenta.PESO;
 	}
 }

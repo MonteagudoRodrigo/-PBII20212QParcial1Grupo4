@@ -2,6 +2,7 @@ package ar.edu.unlam.PBII20212QParcial1Grupo4;
 
 abstract public class Cuenta {
 	public Double saldo;
+	private TipoDeCuenta tipoDeCuenta;
 	
 	
 
@@ -32,8 +33,14 @@ abstract public class Cuenta {
 	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
-	
-	public TipoCuenta getTipo(){
-		return null;
+
+	public TipoDeCuenta getTipoDeCuenta() {
+		return tipoDeCuenta;
 	}
+
+	public void setTipoDeCuenta(TipoDeCuenta tipoDeCuenta) {
+		this.tipoDeCuenta = tipoDeCuenta;
+	}
+	
+	
 }

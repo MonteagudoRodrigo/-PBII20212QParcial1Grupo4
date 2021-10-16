@@ -44,7 +44,7 @@ public class Billetera {
 
 	public Boolean crearCuenta(TipoCuenta tipoDeCuenta, Double montoInicial) {
 		for (Integer i = 0; i < cuentas.length; i++) {
-			if (cuentas[i].getTipo() == tipoDeCuenta) {
+			if (cuentas[i].getTipoDeCuenta().equals(tipoDeCuenta)) {
 				return false;
 			}
 		}

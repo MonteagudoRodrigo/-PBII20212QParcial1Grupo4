@@ -40,7 +40,7 @@ public class Bitcoin extends Cuenta implements Venta, Compra {
 		return false;
 	}
 	@Override
-	public TipoCuenta getTipo(){
-		return TipoCuenta.BITCOIN;
+	public TipoDeCuenta getTipoDeCuenta(){
+		return TipoDeCuenta.BITCOIN;
 	}
 }
